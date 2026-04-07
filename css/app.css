@@ -1,0 +1,494 @@
+/* Nav Bar */
+.topbar-responsive {
+  background: #F55036;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Optional */
+}
+
+.topbar-responsive .topbar-responsive-logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 50px;
+  width: auto;
+  display: block;
+}
+
+.topbar-responsive .menu {
+  background: #F55036;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.topbar-responsive .menu li {
+  list-style: none;
+}
+
+.topbar-responsive .menu li:last-of-type {
+  margin-right: 0;
+}
+
+.topbar-responsive .menu a {
+  color: #000000;
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.15s ease-in;
+}
+
+.topbar-responsive .menu a:hover {
+  color: #ffffff;
+}
+
+.topbar-responsive .menu .topbar-responsive-button {
+  color: #000000;
+  border: 1px solid #000000;
+  border-radius: 5000px;
+  padding: 0.5rem 1rem;
+  background: transparent;
+  cursor: pointer;
+  transition: color 0.15s ease-in, border-color 0.15s ease-in;
+}
+
+.topbar-responsive .menu .topbar-responsive-button:hover {
+  color: #c6d1d8;
+  border-color: #36acf6;
+}
+
+/* Mobile styles */
+@media screen and (max-width: 39.9375em) {
+  .topbar-responsive {
+    padding: 0.125rem 1rem; /* Smaller padding */
+  }
+
+  .logo-img {
+    height: 30px; /* Smaller logo size */
+    opacity: 1; /* Ensure logo is visible */
+  }
+
+  .topbar-responsive .menu a {
+    padding: 0.25rem 0; /* Smaller link padding */
+  }
+
+  .topbar-responsive .menu {
+    gap: 0.5rem; /* Smaller gap between menu items */
+  }
+
+  .topbar-responsive .menu .topbar-responsive-button {
+    padding: 0.25rem 0.75rem; /* Smaller button */
+  }
+
+  .topbar-responsive .top-bar-title {
+    position: relative;
+    width: 100%;
+  }
+
+  .topbar-responsive .top-bar-title span {
+    position: absolute;
+    right: 0;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    padding: 0.25rem 0.45rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .topbar-responsive .top-bar-title span .menu-icon {
+    margin-bottom: 4px;
+  }
+
+  .topbar-responsive .menu {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+  }
+
+  .topbar-responsive .menu a {
+    padding: 0.875rem 0;
+  }
+
+  .topbar-responsive .menu .topbar-responsive-button {
+    width: 100%;
+    margin: 0.875rem 0;
+  }
+
+  .topbar-responsive-links {
+    animation-fill-mode: both;
+    animation-duration: 0.5s;
+    width: 100%;
+    animation: fadeIn 1s ease-in;
+  }
+
+  /* Hide logo on mobile if needed */
+  .logo-img {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(0%); }
+}
+
+.hero-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Custom Hamburger Button */
+.custom-menu-icon {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  display: none; /* Hidden by default, shown on mobile */
+}
+
+/* Hide menu by default on mobile */
+@media screen and (max-width: 39.9375em) {
+  .custom-menu-icon {
+    display: block;
+  }
+
+  .topbar-responsive-links {
+    display: none;
+    width: 100%;
+  }
+
+  .topbar-responsive-links.is-active {
+    display: block;
+  }
+
+  .topbar-responsive .menu {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  width: 100vw;
+  height: auto;
+  overflow: hidden;
+  margin-bottom: 0; /* Adjusted margin to reduce space */
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Make the image cover the section */
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 30%;
+  right: 10%;
+  text-align: right;
+  color: white;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #000000;
+}
+
+.hero-button {
+  display: inline-block;
+  background-color: #F55036;
+  color: white;
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  font-size: 1.25rem;
+  border-radius: 500px;
+  transition: background-color 0.3s ease;
+}
+
+.hero-button:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* ------------------------------------ */
+/* NEW: Feature box styling (for hover and mobile stacking) */
+/* ------------------------------------ */
+
+/* Each feature box */
+.grid-container.text-center .grid-x .cell {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.grid-container.text-center .grid-x .cell img {
+  width: 50%;
+  transition: opacity 0.3s ease;
+}
+
+.grid-container.text-center .grid-x .cell h4 {
+  width: 50%;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Mobile Specific */
+@media screen and (max-width: 39.9375em) {
+  /* For mobile, move the overlay text and button below the image */
+  .hero-overlay {
+    position: relative;
+    top: auto;
+    right: auto;
+    text-align: center; /* Center text */
+    margin-top: 20px; /* Space between image and text */
+  }
+
+  .hero-title {
+    font-size: 1.8rem; /* Adjust text size for mobile */
+    margin-bottom: 0.75rem;
+  }
+
+  .hero-button {
+    font-size: 1rem; /* Adjust button size for mobile */
+    padding: 0.5rem 1.25rem; /* Adjust padding */
+  }
+}
+
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Row 3 */
+
+
+/* Full-width yellow section */
+.yellow-section {
+  background: linear-gradient(to bottom, #ffffff, #F7E00D);
+  width: 100vw;
+  padding: 2rem 0;
+}
+
+
+/* Content within yellow section */
+.grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+}
+
+/* Left column: text */
+.why-sparked-box {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.why-text {
+  font-size: 25px;
+  line-height: 1.6;
+  color: #000000;
+  margin: 0.5rem 0;
+  font-weight: 480;
+}
+
+/* Right side image */
+.right-column-img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .grid-container {
+    flex-direction: column;
+    padding: 0 1rem;
+    text-align: center;
+  }
+
+  .why-sparked-box {
+    margin: 0 auto;
+    padding: 1.5rem;
+  }
+
+  .right-column-img {
+    margin-top: 2rem;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .why-sparked-box ul {
+    padding-left: 1.5rem;
+    text-align: left;
+  }
+}
+
+
+
+
+
+
+
+
+/* Testimonies */
+.testimonial-section {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: linear-gradient(to bottom, #F7E00D, #F55036); /* Gradient starts from yellow at the top to red at the bottom */
+  color: #fff; /* Text color to contrast the gradient */
+  width: 100vw; /* Ensures the section is full-width */
+  height: 400px;
+  margin-left: calc(-50vw + 50%); /* Offsets the margin so that the background stretches */
+  margin-right: calc(-50vw + 50%); /* Same for the right side */
+  box-sizing: border-box; /* Ensures padding is included within width */
+}
+
+.testimonial-heading {
+  font-size: 2rem;
+  font-weight: bolder;
+  margin-bottom: 2rem;
+  color: #000000; /* White color for heading text */
+}
+
+.testimonial-carousel-wrapper {
+  position: relative;
+  overflow: hidden;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.testimonial-carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.testimonial {
+  min-width: 100%;
+  padding: 2rem;
+  background: rgb(0, 0, 0);
+  border-radius: 16px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.testimonial p {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.testimonial h4 {
+  font-weight:bold;
+  font-size: 16px;
+  color: #F18229; 
+}
+
+/* Dots */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 0.5rem;
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background-color: #F7E00D; /* Active dot is the red color */
+}
+
+/* Responsive */
+@media screen and (max-width: 600px) {
+  .testimonial {
+    padding: 1.5rem 1rem;
+  }
+}

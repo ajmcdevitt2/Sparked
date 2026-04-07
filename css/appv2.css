@@ -1,0 +1,468 @@
+/* Nav Bar */
+.topbar-responsive {
+  background: #F55036;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Optional */
+}
+
+.topbar-responsive .topbar-responsive-logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 50px;
+  width: auto;
+  display: block;
+}
+
+.topbar-responsive .menu {
+  background: #F55036;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.topbar-responsive .menu li {
+  list-style: none;
+}
+
+.topbar-responsive .menu li:last-of-type {
+  margin-right: 0;
+}
+
+.topbar-responsive .menu a {
+  color: #000000;
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.15s ease-in;
+}
+
+.topbar-responsive .menu a:hover {
+  color: #ffffff;
+}
+
+.topbar-responsive .menu .topbar-responsive-button {
+  color: #000000;
+  border: 1px solid #000000;
+  border-radius: 5000px;
+  padding: 0.5rem 1rem;
+  background: transparent;
+  cursor: pointer;
+  transition: color 0.15s ease-in, border-color 0.15s ease-in;
+}
+
+.topbar-responsive .menu .topbar-responsive-button:hover {
+  color: #c6d1d8;
+  border-color: #36acf6;
+}
+
+/* Mobile styles */
+@media screen and (max-width: 39.9375em) {
+  .topbar-responsive {
+    padding: 0.125rem 1rem; /* Smaller padding */
+  }
+
+  .logo-img {
+    height: 30px; /* Smaller logo size */
+    opacity: 1; /* Ensure logo is visible */
+  }
+
+  .topbar-responsive .menu a {
+    padding: 0.25rem 0; /* Smaller link padding */
+  }
+
+  .topbar-responsive .menu {
+    gap: 0.5rem; /* Smaller gap between menu items */
+  }
+
+  .topbar-responsive .menu .topbar-responsive-button {
+    padding: 0.25rem 0.75rem; /* Smaller button */
+  }
+
+  .topbar-responsive .top-bar-title {
+    position: relative;
+    width: 100%;
+  }
+
+  .topbar-responsive .top-bar-title span {
+    position: absolute;
+    right: 0;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    padding: 0.25rem 0.45rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .topbar-responsive .top-bar-title span .menu-icon {
+    margin-bottom: 4px;
+  }
+
+  .topbar-responsive .menu {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+  }
+
+  .topbar-responsive .menu a {
+    padding: 0.875rem 0;
+  }
+
+  .topbar-responsive .menu .topbar-responsive-button {
+    width: 100%;
+    margin: 0.875rem 0;
+  }
+
+  .topbar-responsive-links {
+    animation-fill-mode: both;
+    animation-duration: 0.5s;
+    width: 100%;
+    animation: fadeIn 1s ease-in;
+  }
+
+  /* Hide logo on mobile if needed */
+  .logo-img {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(0%); }
+}
+
+.hero-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Custom Hamburger Button */
+.custom-menu-icon {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  display: none; /* Hidden by default, shown on mobile */
+}
+
+/* Hide menu by default on mobile */
+@media screen and (max-width: 39.9375em) {
+  .custom-menu-icon {
+    display: block;
+  }
+
+  .topbar-responsive-links {
+    display: none;
+    width: 100%;
+  }
+
+  .topbar-responsive-links.is-active {
+    display: block;
+  }
+
+  .topbar-responsive .menu {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+
+
+
+
+
+
+
+
+/* Row 2 - Section background gradient */
+.grid-container.text-center {
+  background: linear-gradient(to bottom, #ffffff, #F7E00D); /* White to yellow gradient */
+  text-align: center;
+  margin-top: 20px; /* Adds a white top margin */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;  /* Ensure full width of the viewport */
+  height: 100vh; /* Full height */
+  position: relative; /* Ensure full-width container */
+  left: 0; /* Aligns the container to the left */
+  right: 0; /* Stretches the container to the right edge */
+  margin-left: 0; /* Remove any left margin */
+  margin-right: 0; /* Remove any right margin */
+  padding: 0; /* Optional: Ensure no padding constrains the width */
+}
+
+/* Ensure grid-x stretches full width */
+.grid-container.text-center .grid-x {
+  margin-left: 0; /* Remove left margin */
+  margin-right: 0; /* Remove right margin */
+  width: 100%; /* Ensure it stretches full width */
+}
+
+/* Optional: Full width for heading text */
+.heading {
+  font-weight: bold;
+  font-size: 2rem;
+  color: black;
+  margin-bottom: 50px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 90vh; /* Almost full screen */
+  overflow: hidden;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Make the image cover the section */
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 30%;
+  right: 10%;
+  text-align: right;
+  color: white;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #000000;
+}
+
+.hero-button {
+  display: inline-block;
+  background-color: #F55036;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  font-size: 1.25rem;
+  border-radius: 500px;
+  transition: background-color 0.3s ease;
+}
+
+.hero-button:hover {
+  background-color: #ffffff;
+  color:#000000
+}
+
+/* ------------------------------------ */
+/* NEW: Feature box styling (for hover and mobile stacking) */
+/* ------------------------------------ */
+
+/* Each feature box */
+.grid-container.text-center .grid-x .cell {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.grid-container.text-center .grid-x .cell img {
+  width: 50%;
+  transition: opacity 0.3s ease;
+}
+
+.grid-container.text-center .grid-x .cell h4 {
+  width: 50%;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Mobile Specific */
+@media screen and (max-width: 39.9375em) {
+  /* For mobile, move the overlay text and button below the image */
+  .hero-overlay {
+    position: relative;
+    top: auto;
+    right: auto;
+    text-align: center; /* Center text */
+    margin-top: 20px; /* Space between image and text */
+  }
+
+  .hero-title {
+    font-size: 1.8rem; /* Adjust text size for mobile */
+    margin-bottom: 0.75rem;
+  }
+
+  .hero-button {
+    font-size: 1rem; /* Adjust button size for mobile */
+    padding: 0.5rem 1.25rem; /* Adjust padding */
+  }
+}
+
+
+
+
+
+
+/* Colors */
+:root {
+  --sparked-red: #FF4B3E; /* Red */
+  --sparked-yellow: #F2C94C; /* Yellow */
+  --sparked-black: #161541; /* Black */
+  --sparked-white: #FFFFFF; /* White */
+  --sparked-orange: #FF9F00; /* Orange */
+}
+
+/* Section 1: Accelerate into a New Era */
+.accelerate-section {
+  padding: 50px 20px;
+  background-color: var(--sparked-yellow);
+  text-align: center;
+}
+
+.accelerate-content h2 {
+  font-size: 2.5rem;
+  color: var(--sparked-black);
+}
+
+.accelerate-images img {
+  width: 30%;
+  margin: 0 10px;
+  max-width: 300px;
+}
+
+.accelerate-section p {
+  font-size: 1.2rem;
+  color: var(--sparked-black);
+}
+
+/* Section 2: Why Sparked */
+.why-sparked-section {
+  padding: 50px 20px;
+  background-color: var(--sparked-red);
+  text-align: center;
+}
+
+.why-sparked-content h2 {
+  font-size: 2.5rem;
+  color: var(--sparked-white);
+}
+
+.why-sparked-content ul {
+  list-style: none;
+  padding: 0;
+  font-size: 1.2rem;
+  color: var(--sparked-white);
+}
+
+.why-sparked-content img {
+  margin-top: 20px;
+  width: 100px;
+  height: auto;
+}
+
+/* Section 3: Testimonials */
+.testimonials-section {
+  padding: 50px 20px;
+  background-color: var(--sparked-orange);
+  text-align: center;
+}
+
+.testimonials-content h2 {
+  font-size: 2.5rem;
+  color: var(--sparked-black);
+}
+
+.carousel {
+  display: flex;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.carousel-item {
+  min-width: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item p {
+  font-size: 1.2rem;
+  color: var(--sparked-black);
+  margin-bottom: 10px;
+}
+
+.carousel-item span {
+  font-size: 1rem;
+  color: var(--sparked-black);
+}
+
+/* Section 4: Footer */
+.footer-section {
+  background-color: var(--sparked-black);
+  color: var(--sparked-white);
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.footer-section h2 {
+  font-size: 2rem;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: var(--sparked-yellow);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid var(--sparked-black);
+  border-radius: 4px;
+}
+
+.contact-form button {
+  padding: 10px 20px;
+  background-color: var(--sparked-black);
+  color: var(--sparked-white);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background-color: var(--sparked-red);
+}
