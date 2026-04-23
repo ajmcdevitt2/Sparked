@@ -860,3 +860,26 @@ p {
     background-color: #F55036;
     color: #ffffff;
 }
+
+/* --- CLIENT REVIEWS FIX --- */
+.review {
+  display: none; /* Hide all reviews by default */
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.review.active {
+  display: block !important; /* Show the active review */
+  opacity: 1 !important;
+}
+
+/* --- DOTS FIX --- */
+.dot {
+  cursor: pointer;
+  background-color: #bbb; /* Grey for inactive dots */
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background-color: #F55036 !important; /* Bright Red/Yellow for the active dot */
+}
