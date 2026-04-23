@@ -53,25 +53,40 @@ dots.forEach((dot, index) => {
 // ==== FOOTER YEAR ====
 document.getElementById("year").textContent = new Date().getFullYear();
 
-// ==== ACCORDION FUNCTIONALITY ====
+// ==== ACCORDION FUNCTIONALITY (Hover & Click) ====
 const accordionButtons = document.querySelectorAll('.accordion-btn');
 
 accordionButtons.forEach((btn) => {
-  btn.addEventListener('click', function() {
-    const content = this.nextElementSibling;
+  const content = btn.nextElementSibling;
 
-    // Close others
+  // Function to open the card
+  const openAccordion = () => {
+    // Optional: Close others first
     document.querySelectorAll('.accordion-content').forEach((el) => {
-      if (el !== content) {
-        el.style.maxHeight = null;
-      }
+      if (el !== content) el.style.maxHeight = null;
     });
+    content.style.maxHeight = content.scrollHeight + "px";
+  };
 
-    // Toggle this one
-    if (content.style.maxHeight) {
-      content.style.maxHeight = null;
+  // Function to close the card
+  const closeAccordion = () => {
+    content.style.maxHeight = null;
+  };
+
+  // 1. HOVER EFFECT (Desktop)
+  btn.addEventListener('mouseenter', openAccordion);
+  btn.addEventListener('mouseleave', closeAccordion);
+  
+  // Also keep it open if the mouse is moving inside the answer itself
+  content.addEventListener('mouseenter', openAccordion);
+  content.addEventListener('mouseleave', closeAccordion);
+
+  // 2. CLICK EFFECT (Mobile/Fallback)
+  btn.addEventListener('click', () => {
+    if (content.style.maxHeight && content.style.maxHeight !== "0px") {
+      closeAccordion();
     } else {
-      content.style.maxHeight = content.scrollHeight + "px";
+      openAccordion();
     }
   });
 });
