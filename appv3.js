@@ -57,17 +57,17 @@ document.getElementById("year").textContent = new Date().getFullYear();
 const accordionButtons = document.querySelectorAll('.accordion-btn');
 
 accordionButtons.forEach((btn) => {
-  btn.addEventListener('click', () => {
-    const content = btn.nextElementSibling;
+  btn.addEventListener('click', function() {
+    const content = this.nextElementSibling;
 
-    // Close all open accordions
+    // Close others
     document.querySelectorAll('.accordion-content').forEach((el) => {
       if (el !== content) {
         el.style.maxHeight = null;
       }
     });
 
-    // Toggle the clicked one
+    // Toggle this one
     if (content.style.maxHeight) {
       content.style.maxHeight = null;
     } else {
