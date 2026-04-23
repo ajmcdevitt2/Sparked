@@ -833,3 +833,30 @@ p {
   font-family: 'Jost', sans-serif;
   font-weight: 400; /* Regular font weight */
 }
+/* Fix for Review Slider Visibility */
+.review {
+    display: none; /* Keeps them hidden by default */
+}
+
+.review.active {
+    display: block !important; /* Shows only the current one */
+}
+
+/* Optional: Smooth transition for the Review text */
+.review.active {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Fix for Accordion Hover/Active states */
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out; /* This creates the "slide" effect */
+    background-color: #F55036;
+    color: #ffffff;
+}
